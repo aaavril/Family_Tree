@@ -7,25 +7,46 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Node n1 = new Node(1);
-            Node n2 = new Node(2);
-            Node n3 = new Node(3);
-            Node n4 = new Node(4);
-            Node n5 = new Node(5);
-            Node n6 = new Node(6);
-            Node n7 = new Node(7);
-
+            // Node<int> n1 = new Node<int>(1);
+            // Node<int> n2 = new Node<int>(2);
+            // Node<int> n3 = new Node<int>(3);
+            // Node<int> n4 = new Node<int>(4);
+            // Node<int> n5 = new Node<int>(5);
+            // Node<int> n6 = new Node<int>(6);
+            // Node<int> n7 = new Node<int>(7);
+            //
+            // n1.AddChildren(n2);
+            // n1.AddChildren(n3);
+            //
+            // n2.AddChildren(n4);
+            // n2.AddChildren(n5);
+            //
+            // n3.AddChildren(n6);
+            // n3.AddChildren(n7);
+            //
+            // // visitar el árbol aquí
+            // SumVisitor visitor = new SumVisitor();
+            // n1.Accept(visitor);
+            // Console.WriteLine(visitor.Sum);
+            
+            Node<Person> n1 = new Node<Person>(new Person(50, "Carlos"));
+            Node<Person>n2 = new Node<Person>(new Person(30, "Juan"));
+            Node<Person> n3 = new Node<Person>(new Person(30, "Paco"));
+            Node<Person> n4 = new Node<Person>(new Person(30, "Pedro"));
+            Node<Person> n5 = new Node<Person>(new Person(2, "Juancito"));
+            Node<Person> n6 = new Node<Person>(new Person(3, "Paquito"));
+            Node<Person> n7 = new Node<Person>(new Person(1, "Paquín"));
+            
             n1.AddChildren(n2);
             n1.AddChildren(n3);
-
-            n2.AddChildren(n4);
+            n1.AddChildren(n4);
+            
             n2.AddChildren(n5);
-
+            
             n3.AddChildren(n6);
             n3.AddChildren(n7);
-
-            // visitar el árbol aquí
-            SumVisitor visitor = new SumVisitor();
+            
+            SumAgeVisitor visitor = new SumAgeVisitor();
             n1.Accept(visitor);
             Console.WriteLine(visitor.Sum);
         }

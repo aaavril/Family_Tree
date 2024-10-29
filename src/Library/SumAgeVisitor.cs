@@ -1,6 +1,6 @@
 namespace Library;
 
-public class SumVisitor: IVisitor<int>
+public class SumAgeVisitor: IVisitor<Person>
 {
     private int sum = 0;
 
@@ -12,8 +12,8 @@ public class SumVisitor: IVisitor<int>
         }
     }
 
-    public void Visit(Node<int> node)
+    public void Visit(Node<Person> node)
     {
-        sum += node.Member;
+        sum += node.Member.Age;
     }
 }
