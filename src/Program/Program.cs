@@ -46,9 +46,21 @@ namespace Program
             n3.AddChildren(n6);
             n3.AddChildren(n7);
             
-            SumAgeVisitor visitor = new SumAgeVisitor();
-            n1.Accept(visitor);
-            Console.WriteLine(visitor.Sum);
+            SumAgeVisitor visitor1 = new SumAgeVisitor();
+            n1.Accept(visitor1);
+            Console.WriteLine(visitor1.Sum);
+
+            OldestSonVisitor visitor2 = new OldestSonVisitor();
+            n1.Accept(visitor2);
+            Console.WriteLine(visitor2.Age);
+            
+            OldestSonVisitor visitor3 = new OldestSonVisitor();
+            n3.Accept(visitor3);
+            Console.WriteLine(visitor3.Age);
+            
+            LongestNameVisitor visitor4 = new LongestNameVisitor();
+            n1.Accept(visitor4);
+            Console.WriteLine(visitor4.LongestName);
         }
     }
 }
